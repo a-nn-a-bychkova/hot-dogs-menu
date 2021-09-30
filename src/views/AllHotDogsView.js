@@ -5,6 +5,7 @@ import styles from './AllHotDogsView.module.css';
 
 export default function AllHotDogsView() {
   const [hotDogs, setHotDogs] = useState(initialHotDogs);
+  const [editId, setEditId] = useState('');
   const [editMode, setEditMode] = useState(false);
   useEffect(() => {
     console.log('initial HotDogs', initialHotDogs);
@@ -13,6 +14,7 @@ export default function AllHotDogsView() {
   function handleClick(id, event) {
     event.preventDefault();
     console.log('id', id);
+    setEditMode(true);
   }
 
   return (
