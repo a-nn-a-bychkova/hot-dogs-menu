@@ -1,0 +1,25 @@
+.List {
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Item {
+  max-width: 200px;
+  margin-right: 20px;
+}
+.Name {
+  font-size: 18px;
+}
+.Description {
+  height: 60px;
+}
+.BtnContainer {
+  display: flex;
+  flex-direction: column;
+}
+.Btn {
+  border: none;
+  height: 30px;
+  margin-bottom: 10px;
+}

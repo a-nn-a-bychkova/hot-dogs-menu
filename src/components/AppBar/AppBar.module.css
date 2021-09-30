@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+}
+.img {
+  margin-right: 15px;
+}
+.crudText {
+  text-transform: uppercase;
+  padding-right: 5px;
+  padding-left: 5px;
+  background-color: #575151;
+  color: aliceblue;
+}
