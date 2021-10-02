@@ -1,24 +1,28 @@
 [
   {
     "id": "id-1",
+    "img": "some-img.jpg",
     "price": "1",
     "name": "New York City",
     "description": "New Yorkers eat more hot dogs than any other group in the country"
   },
   {
     "id": "id-2",
+    "img": "some-img-2.jpg",
     "price": "2",
     "name": "Chicago",
     "description": "The possible antithesis to New-York dogs"
   },
   {
     "id": "id-3",
+    "img": "some-img-3.jpg",
     "price": "2.5",
     "name": "Atlanta and the South",
     "description": "Buying a hot-dog at Turner Field you'll find your dogs topped with coleslow"
   },
   {
     "id": "id-4",
+    "img": "some-img-4.jpg",
     "price": "1.2",
     "name": "Kansas City",
     "description": "Get the mints out"

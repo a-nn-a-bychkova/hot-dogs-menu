@@ -1,3 +1,33 @@
 .Container {
   max-width: 200px;
 }
+.Name {
+  font-size: 18px;
+}
+.Description {
+  height: 60px;
+}
+.BtnContainer {
+  display: flex;
+  flex-direction: column;
+}
+.Btn {
+  border: none;
+  height: 30px;
+  margin-bottom: 10px;
+}
+/* .Table {
+  border-collapse: collapse;
+  border: 1px solid grey;
+  margin-bottom: 10px;
+}
+.Tr {
+  border-bottom: 1px solid grey;
+} */
+.Input {
+  width: 170px;
+}
+.Textarea {
+  width: 170px;
+  max-height: 200px;
+}
