@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/hot-dogs-menu/static/css/main.17b72124.chunk.css",
-    "main.js": "/hot-dogs-menu/static/js/main.802e8d84.chunk.js",
-    "main.js.map": "/hot-dogs-menu/static/js/main.802e8d84.chunk.js.map",
-    "runtime-main.js": "/hot-dogs-menu/static/js/runtime-main.8d32b128.js",
-    "runtime-main.js.map": "/hot-dogs-menu/static/js/runtime-main.8d32b128.js.map",
-    "static/js/2.d919d286.chunk.js": "/hot-dogs-menu/static/js/2.d919d286.chunk.js",
-    "static/js/2.d919d286.chunk.js.map": "/hot-dogs-menu/static/js/2.d919d286.chunk.js.map",
-    "static/js/3.d22a4c35.chunk.js": "/hot-dogs-menu/static/js/3.d22a4c35.chunk.js",
-    "static/js/3.d22a4c35.chunk.js.map": "/hot-dogs-menu/static/js/3.d22a4c35.chunk.js.map",
+    "main.css": "/hot-dogs-menu/static/css/main.7c45fcb1.chunk.css",
+    "main.js": "/hot-dogs-menu/static/js/main.cb24f36b.chunk.js",
+    "main.js.map": "/hot-dogs-menu/static/js/main.cb24f36b.chunk.js.map",
+    "runtime-main.js": "/hot-dogs-menu/static/js/runtime-main.8bad9c21.js",
+    "runtime-main.js.map": "/hot-dogs-menu/static/js/runtime-main.8bad9c21.js.map",
+    "static/js/2.6e7710ac.chunk.js": "/hot-dogs-menu/static/js/2.6e7710ac.chunk.js",
+    "static/js/2.6e7710ac.chunk.js.map": "/hot-dogs-menu/static/js/2.6e7710ac.chunk.js.map",
+    "static/js/3.f2f05de8.chunk.js": "/hot-dogs-menu/static/js/3.f2f05de8.chunk.js",
+    "static/js/3.f2f05de8.chunk.js.map": "/hot-dogs-menu/static/js/3.f2f05de8.chunk.js.map",
     "index.html": "/hot-dogs-menu/index.html",
-    "static/css/main.17b72124.chunk.css.map": "/hot-dogs-menu/static/css/main.17b72124.chunk.css.map",
-    "static/js/2.d919d286.chunk.js.LICENSE.txt": "/hot-dogs-menu/static/js/2.d919d286.chunk.js.LICENSE.txt",
+    "static/css/main.7c45fcb1.chunk.css.map": "/hot-dogs-menu/static/css/main.7c45fcb1.chunk.css.map",
+    "static/js/2.6e7710ac.chunk.js.LICENSE.txt": "/hot-dogs-menu/static/js/2.6e7710ac.chunk.js.LICENSE.txt",
+    "static/js/main.cb24f36b.chunk.js.LICENSE.txt": "/hot-dogs-menu/static/js/main.cb24f36b.chunk.js.LICENSE.txt",
     "static/media/logo.43ea7e6b.JPG": "/hot-dogs-menu/static/media/logo.43ea7e6b.JPG",
     "static/media/new-york.3fbf82d5.JPG": "/hot-dogs-menu/static/media/new-york.3fbf82d5.JPG"
   },
   "entrypoints": [
-    "static/js/runtime-main.8d32b128.js",
-    "static/js/2.d919d286.chunk.js",
-    "static/css/main.17b72124.chunk.css",
-    "static/js/main.802e8d84.chunk.js"
+    "static/js/runtime-main.8bad9c21.js",
+    "static/js/2.6e7710ac.chunk.js",
+    "static/css/main.7c45fcb1.chunk.css",
+    "static/js/main.cb24f36b.chunk.js"
   ]
 }
