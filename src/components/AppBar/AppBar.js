@@ -8,6 +8,9 @@ export default function AppBar() {
   function handleAddHotDogCLick() {
     setOpenModal(true);
   }
+  function onToggleModal() {
+    setOpenModal(false);
+  }
   return (
     <header className={styles.header}>
       <div>
@@ -17,7 +20,7 @@ export default function AppBar() {
       <button type="button" onClick={handleAddHotDogCLick}>
         Add hot-dog
       </button>
-      {openModal && <Modal />}
+      {openModal && <Modal onToggleModal={onToggleModal} />}
     </header>
   );
 }

@@ -3,39 +3,39 @@ import { createReducer } from '@reduxjs/toolkit';
 import {
   addHotDog,
   deleteHotDog,
-  // addHotDogRequest,
-  // addHotDogSuccess,
-  // addHotDogError,
-  // deleteHotDogRequest,
-  // deleteHotDogSuccess,
-  // deleteHotDogError,
-  // fetchHotDogsRequest,
-  // fetchHotDogsSuccess,
-  // fetchHotDogsError,
+  fetchHotDogs,
+  addHotDogRequest,
+  addHotDogSuccess,
+  addHotDogError,
+  deleteHotDogRequest,
+  deleteHotDogSuccess,
+  deleteHotDogError,
+  fetchHotDogsRequest,
+  fetchHotDogsSuccess,
+  fetchHotDogsError,
+  updateHotDogRequest,
+  updateHotDogSuccess,
+  updateHotDogError,
 } from './menu-actions';
 
-// const filter = createReducer('', {
-//   [changeFilter]: (_, action) => action.payload,
-// });
-// const hotDogs = createReducer([], {
-//   [fetchHotDogsSuccess]: (_, { payload }) => payload,
-//   [addHotDogSuccess]: (state, { payload }) => {
-//     return [...state, payload];
-//   },
-// [deleteHotDogSuccess]: (state, { payload }) =>
-// state.filter(({ id }) => id !== payload),
-// });
-// export default combineReducers({
-//   hotDogs,
-// });
 const hotDogs = createReducer([], {
-  [addHotDog]: (state, { payload }) => {
+  [fetchHotDogsSuccess]: (_, { payload }) => payload,
+  [addHotDogSuccess]: (state, { payload }) => {
     return [...state, payload];
   },
-  [deleteHotDog]: (state, { payload }) =>
+  [updateHotDogSuccess]: (state, { payload }) => {
+    return;
+  },
+  [deleteHotDogSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
 });
 
-export default combineReducers({
-  hotDogs,
-});
+// const hotDogs = createReducer([], {
+//   [addHotDog]: (state, { payload }) => {
+//     return [...state, payload];
+//   },
+//   [deleteHotDog]: (state, { payload }) =>
+//     state.filter(({ id }) => id !== payload),
+// });
+
+export default combineReducers({ hotDogs });

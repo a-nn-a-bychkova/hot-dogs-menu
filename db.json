@@ -1,0 +1,110 @@
+{
+  "hotdogs": [
+    {
+      "id": "id-1",
+      "img": "some-img.jpg",
+      "price": "1",
+      "name": "New York City",
+      "description": "New Yorkers eat more hot dogs than any other group in the country"
+    },
+    {
+      "id": "id-2",
+      "img": "some-img-2.jpg",
+      "price": "2",
+      "name": "Chicago",
+      "description": "The possible antithesis to New-York dogs"
+    },
+    {
+      "id": "id-3",
+      "img": "some-img-3.jpg",
+      "price": "2.5",
+      "name": "Atlanta and the South",
+      "description": "Buying a hot-dog at Turner Field you'll find your dogs topped with coleslow"
+    },
+    {
+      "id": "id-4",
+      "img": "some-img-4.jpg",
+      "price": "1.2",
+      "name": "Kansas City",
+      "description": "Get the mints out"
+    },
+    {
+      "name": "HotDog 4",
+      "description": "rshsetj",
+      "price": "3",
+      "id": "T3p9N-g"
+    },
+    {
+      "name": "Anna2",
+      "description": "rtjsrsr",
+      "price": "4",
+      "id": "jUrhee-"
+    },
+    {
+      "name": "Rosie Simpson1",
+      "description": "erjtst",
+      "price": "45",
+      "id": "6G76txc"
+    },
+    {
+      "name": "Anna2",
+      "description": "gfjxm",
+      "price": "rhse",
+      "id": "72kLEFD"
+    },
+    {
+      "name": "Anna1",
+      "description": "hrdxj",
+      "price": "2",
+      "id": "-RowNof"
+    },
+    {
+      "name": "wdqw2",
+      "description": "useu",
+      "price": "4",
+      "id": "RqI03tw"
+    },
+    {
+      "name": "wetaw",
+      "description": "wya",
+      "price": "2",
+      "id": "1e79oZ8"
+    },
+    {
+      "name": "rzerz",
+      "description": "rajetks",
+      "price": "2",
+      "id": "Ov-xfAh"
+    },
+    {
+      "name": "sdhsjf",
+      "description": "wrhaejttj",
+      "price": "3",
+      "id": "dNxaMUN"
+    },
+    {
+      "name": "etjsrk",
+      "description": "etsrkzld",
+      "price": "2",
+      "id": "4FklBEv"
+    },
+    {
+      "id": "-N8EYx2py",
+      "name": "szarzer",
+      "description": "rs<jyjk",
+      "price": "2"
+    },
+    {
+      "id": "4OYqarZaf",
+      "name": "aeraeu",
+      "description": "reaj",
+      "price": "3"
+    },
+    {
+      "name": "fxgjxfj",
+      "description": "rjjt",
+      "price": "2",
+      "id": "lpJu-jtwQ"
+    }
+  ]
+}

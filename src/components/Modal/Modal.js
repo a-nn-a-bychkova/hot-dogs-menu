@@ -1,35 +1,54 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from '../../redux/menu-actions';
+import { menuSelectors, menuOperations } from '../../redux';
 import styles from './Modal.module.css';
 
-export default function Modal() {
+export default function Modal({ onToggleModal }) {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
   const [img, setImg] = useState('');
   const hotDogs = useSelector(state => state.menu.hotDogs);
   const dispatch = useDispatch();
+  const elRef = useRef();
+
+  useEffect(() => {
+    function handleMouseUp(event) {
+      console.log(elRef.current);
+      const isElementChild = elRef.current.contains(event.target);
+      if (!isElementChild) {
+        onToggleModal();
+      }
+    }
+    window.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
+
   function handleChangeName(e) {
-    console.log(e.currentTarget.value);
+    e.preventDefault();
     setName(e.currentTarget.value);
   }
   function handleChangePrice(e) {
-    console.log(e.currentTarget.value);
+    e.preventDefault();
     setPrice(e.currentTarget.value);
   }
   function handleChangeDescription(e) {
-    console.log(e.currentTarget.value);
+    e.preventDefault();
     setDescription(e.currentTarget.value);
   }
   // function handleChangeImg(e) {
+  // e.preventDefault();
   //   setImg(e.currentTarget.value);
   // }
 
-  function handleAddBtnClick() {
+  function handleAddBtnClick(e) {
+    e.preventDefault();
     if ((name !== '', price != '', description != '')) {
-      dispatch(actions.addHotDog({ name, price, description }));
+      dispatch(menuOperations.addHotDog({ name, price, description }));
       reset();
+      onToggleModal();
     } else {
       alert('Fill the form please');
     }
@@ -41,12 +60,14 @@ export default function Modal() {
     // setImg('');
   }
 
-  function handleNoBtnClick() {
+  function handleNoBtnClick(e) {
+    e.preventDefault();
     reset();
+    onToggleModal(true);
   }
   return (
     <div className={styles.Overlay}>
-      <div className={styles.Container}>
+      <div className={styles.Container} ref={elRef}>
         <h2>Add new hot-dog</h2>
         <form className={styles.Form}>
           <input
@@ -108,3 +129,4 @@ export default function Modal() {
 }
 //!!! label для input
 //!!! img
+//when   e.preventDefault() is needed
