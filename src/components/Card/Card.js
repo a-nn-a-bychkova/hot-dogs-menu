@@ -60,13 +60,7 @@ export default function Card({ id, price, name, description }) {
       )}
       {editMode && (
         <div>
-          {/* <img src={img} /> */}
-          {/* <table className={styles.Table}>
-            <tr className={styles.Tr}>{img}</tr>
-            <tr className={styles.Tr}>{name}</tr>
-            <tr className={styles.Tr}>{price}</tr>
-            <tr className={styles.Tr}>{description}</tr>
-          </table> */}
+         
           <form className={styles.Form}>
             {/* <input
               className={styles.Input}
@@ -128,5 +122,5 @@ export default function Card({ id, price, name, description }) {
     </div>
   );
 }
-//?textarea
+
 //img

@@ -7,10 +7,7 @@ import { menuSelectors } from '../redux';
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => {
-    // dispatch(menuOperations.fetchContacts());
-  }, []);
-  // const hotDogs = useSelector(menuSelectors.getHotDogs);
+
 
   return (
     <>

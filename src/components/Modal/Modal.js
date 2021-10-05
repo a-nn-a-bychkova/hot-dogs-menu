@@ -45,10 +45,20 @@ export default function Modal({ onToggleModal }) {
 
   function handleAddBtnClick(e) {
     e.preventDefault();
+
+    const hotDogsNames = hotDogs.map(function (hotdog) {
+      return hotdog.name;
+    });
+    const isDuplicate = hotDogsNames.includes(name);
+
     if ((name !== '', price != '', description != '')) {
-      dispatch(menuOperations.addHotDog({ name, price, description }));
-      reset();
-      onToggleModal();
+      if (!isDuplicate) {
+        dispatch(menuOperations.addHotDog({ name, price, description }));
+        reset();
+        onToggleModal();
+      } else {
+        alert('This hotdog exists');
+      }
     } else {
       alert('Fill the form please');
     }
