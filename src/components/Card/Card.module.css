@@ -1,6 +1,11 @@
 .Container {
   max-width: 200px;
 }
+.Image {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+}
 .Name {
   font-size: 18px;
   margin: 0px;

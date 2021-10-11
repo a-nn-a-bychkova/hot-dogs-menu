@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { menuSelectors, menuOperations } from '../../redux';
 import NewYork from '../../images/new-york.JPG';
 import styles from './Card.module.css';
 
-export default function Card({ id, price, name, description }) {
+export default function Card({ id, price, name, description, img }) {
   const [currName, setCurrName] = useState(name);
   const [currPrice, setCurrPrice] = useState(price);
   const [currDescription, setCurrDescription] = useState(description);
-  const [img, setImg] = useState('');
+  const [currImg, setCurrImg] = useState(img);
   const [editId, setEditId] = useState('');
   const [editMode, setEditMode] = useState(false);
   const dispatch = useDispatch();
@@ -30,9 +30,19 @@ export default function Card({ id, price, name, description }) {
     e.preventDefault();
     setCurrDescription(e.currentTarget.value);
   }
+  function handleChangeImg(e) {
+    e.preventDefault();
+    setCurrImg(e.currentTarget.value);
+  }
   function handleUpdateBtnClick(id, event) {
     dispatch(
-      menuOperations.updateHotDog(id, currName, currPrice, currDescription),
+      menuOperations.updateHotDog(
+        id,
+        currName,
+        currPrice,
+        currDescription,
+        currImg,
+      ),
     );
     setEditMode(false);
   }
@@ -44,7 +54,7 @@ export default function Card({ id, price, name, description }) {
     <div>
       {!editMode && (
         <div className={styles.Card}>
-          {/* <img src={img} /> */}
+          <img src={currImg} className={styles.Image} />
           <h2 className={styles.Name}>{name}</h2>
           <p className={styles.Price}>{price}$</p>
           <p className={styles.Description}>{description}</p>
@@ -60,17 +70,16 @@ export default function Card({ id, price, name, description }) {
       )}
       {editMode && (
         <div>
-         
           <form className={styles.Form}>
-            {/* <input
+            <input
               className={styles.Input}
               // type="image"
               name="image"
               value={img}
               placeholder="Image"
-              onChange={handleChangeName}
+              onChange={handleChangeImg}
               required
-            /> */}
+            />
             <input
               className={styles.Input}
               type="text"

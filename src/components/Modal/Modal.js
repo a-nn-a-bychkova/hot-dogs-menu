@@ -38,10 +38,10 @@ export default function Modal({ onToggleModal }) {
     e.preventDefault();
     setDescription(e.currentTarget.value);
   }
-  // function handleChangeImg(e) {
-  // e.preventDefault();
-  //   setImg(e.currentTarget.value);
-  // }
+  function handleChangeImg(e) {
+    e.preventDefault();
+    setImg(e.currentTarget.value);
+  }
 
   function handleAddBtnClick(e) {
     e.preventDefault();
@@ -51,9 +51,9 @@ export default function Modal({ onToggleModal }) {
     });
     const isDuplicate = hotDogsNames.includes(name);
 
-    if ((name !== '', price != '', description != '')) {
+    if ((name !== '', price != '', description != '', img !== '')) {
       if (!isDuplicate) {
-        dispatch(menuOperations.addHotDog({ name, price, description }));
+        dispatch(menuOperations.addHotDog({ name, price, description, img }));
         reset();
         onToggleModal();
       } else {
@@ -67,7 +67,7 @@ export default function Modal({ onToggleModal }) {
     setName('');
     setPrice('');
     setDescription('');
-    // setImg('');
+    setImg('');
   }
 
   function handleNoBtnClick(e) {
@@ -107,7 +107,7 @@ export default function Modal({ onToggleModal }) {
             onChange={handleChangeDescription}
             required
           />
-          {/* <input
+          <input
             className={styles.Input}
             // type="image"
             name="image"
@@ -115,7 +115,7 @@ export default function Modal({ onToggleModal }) {
             placeholder="Image"
             onChange={handleChangeImg}
             required
-          />  */}
+          />
         </form>
         <div>
           <button

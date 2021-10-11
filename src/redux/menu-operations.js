@@ -33,12 +33,12 @@ const fetchHotDogs = () => dispatch => {
 };
 
 const addHotDog =
-  ({ name, description, price }) =>
+  ({ name, description, price, img }) =>
   dispatch => {
     const newHotDog = {
       id: shortid.generate(),
       name,
-      // img,
+      img,
       description,
       price,
     };
