@@ -1,7 +1,5 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import shortid from 'shortid';
 import { createAction } from '@reduxjs/toolkit';
-// import * as menuAPI from 'services/menu-api';
 
 export const addHotDog = createAction(
   'menu/addHotDogRequest',
@@ -15,20 +13,7 @@ export const addHotDog = createAction(
     },
   }),
 );
-console.log(
-  addHotDog({
-    img: 'some-img-5.jpg',
-    price: '8',
-    name: 'Kharkiv',
-    description: 'The best',
-  }),
-);
 export const deleteHotDog = createAction('menu/deleteHotDogRequest');
-
-// export const fetchHotDogs = createAsyncThunk('menu/fetchHotDogs', async () => {
-//   const hotDogs = await menuAPI.fetchHotDogs();
-//   return hotDogs;
-// });
 
 export const fetchHotDogsRequest = createAction('menu/fetchHotDogsRequest');
 export const fetchHotDogsSuccess = createAction('menu/fetchHotDogsSuccess');

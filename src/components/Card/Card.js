@@ -1,21 +1,23 @@
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { menuSelectors, menuOperations } from '../../redux';
-import NewYork from '../../images/new-york.JPG';
+import { useDispatch, useSelector } from 'react-redux';
+import { menuOperations } from '../../redux';
+
 import styles from './Card.module.css';
 
 export default function Card({ id, price, name, description, img }) {
+  const hotDogs = useSelector(state => state.menu.hotDogs);
   const [currName, setCurrName] = useState(name);
+  const [currImg, setCurrImg] = useState(img);
   const [currPrice, setCurrPrice] = useState(price);
   const [currDescription, setCurrDescription] = useState(description);
-  const [currImg, setCurrImg] = useState(img);
-  const [editId, setEditId] = useState('');
   const [editMode, setEditMode] = useState(false);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(menuOperations.updateHotDog);
+  }, [dispatch]);
   function handleClick(id, event) {
     event.preventDefault();
-    console.log('id', id);
     setEditMode(true);
   }
   function handleChangeName(e) {
@@ -35,20 +37,34 @@ export default function Card({ id, price, name, description, img }) {
     setCurrImg(e.currentTarget.value);
   }
   function handleUpdateBtnClick(id, event) {
+    const hotDogsNames = hotDogs.map(function (hotdog) {
+      return hotdog.name;
+    });
+    const isDuplicate = hotDogsNames.includes(name);
+    // if (
+    //   (currName !== '', currPrice != '', currDescription != '', currImg !== '')
+    // ) {
+    //   if (!isDuplicate) {
     dispatch(
-      menuOperations.updateHotDog(
+      menuOperations.updateHotDog({
         id,
         currName,
+        currImg,
         currPrice,
         currDescription,
-        currImg,
-      ),
+      }),
     );
+    //   } else {
+    //     alert('This hotdog exists');
+    //   }
+    // } else {
+    //   alert('Fill the form please');
+    // }
+
     setEditMode(false);
   }
   function handleDeleteBtnClick(id, event) {
     dispatch(menuOperations.deleteHotDog(id));
-    // console.log('id in delete', id);
   }
   return (
     <div>
@@ -75,7 +91,7 @@ export default function Card({ id, price, name, description, img }) {
               className={styles.Input}
               // type="image"
               name="image"
-              value={img}
+              value={currImg}
               placeholder="Image"
               onChange={handleChangeImg}
               required

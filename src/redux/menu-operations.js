@@ -7,7 +7,6 @@ import {
   deleteHotDogRequest,
   deleteHotDogSuccess,
   deleteHotDogError,
-  //   fetchHotDogs,
   fetchHotDogsRequest,
   fetchHotDogsSuccess,
   fetchHotDogsError,
@@ -16,61 +15,59 @@ import {
   updateHotDogError,
 } from './menu-actions';
 
-axios.defaults.baseURL = 'http://localhost:4040';
+axios.defaults.baseURL = 'http://localhost:8080/api';
 
-const fetchHotDogs = () => dispatch => {
+const fetchHotDogs = dispatch => {
   dispatch(fetchHotDogsRequest());
-  //   try {
-  //     const { data } = await axios.get('/hotdogs');
-  //     dispatch(fetchHotDogsSuccess(data));
-  //   } catch (error) {
-  //     dispatch(fetchHotDogsError(error.message));
-  //   }
   axios
-    .get('/hotdogs')
+    .get('/hotdog')
     .then(({ data }) => dispatch(fetchHotDogsSuccess(data)))
     .catch(error => dispatch(fetchHotDogsError(error.message)));
 };
 
 const addHotDog =
-  ({ name, description, price, img }) =>
+  ({ name, img, price, description }) =>
   dispatch => {
     const newHotDog = {
       id: shortid.generate(),
       name,
       img,
-      description,
       price,
+      description,
     };
     dispatch(addHotDogRequest());
-
-    ///add checking for unique name
     axios
-      .post('/hotdogs', newHotDog)
+      .post('/hotdog', newHotDog)
       .then(({ data }) => dispatch(addHotDogSuccess(data)))
+
       .catch(error => dispatch(addHotDogError(error.message)));
   };
 
 const deleteHotDog = id => dispatch => {
   dispatch(deleteHotDogRequest());
   axios
-    .delete(`/hotdogs/${id}`)
+    .delete(`/hotdog/${id}`)
     .then(() => dispatch(deleteHotDogSuccess(id)))
     .catch(error => dispatch(deleteHotDogError(error.message)));
 };
 
-const updateHotDog = (id, currName, currPrice, currDescription) => dispatch => {
-  dispatch(updateHotDogRequest());
-  console.log('updateHotDog name', currName);
-  ///add checking for unique name
-  axios
-    .put(`/hotdogs/${id}`, {
-      name: currName,
-      description: currDescription,
-      price: currPrice,
-    })
-    .then(({ data }) => dispatch(updateHotDogSuccess(data)))
-    .catch(error => dispatch(updateHotDogError(error.message)));
-};
+const updateHotDog =
+  ({ id, currName, currImg, currPrice, currDescription }) =>
+  dispatch => {
+    dispatch(updateHotDogRequest());
+
+    axios
+      .put(`/hotdog/${id}`, {
+        name: currName,
+        img: currImg,
+        price: currPrice,
+        description: currDescription,
+      })
+      .then(({ data }) => {
+        console.log('data', data);
+        dispatch(updateHotDogSuccess(data));
+      })
+      .catch(error => dispatch(updateHotDogError(error.message)));
+  };
 
 export default { addHotDog, deleteHotDog, updateHotDog, fetchHotDogs };

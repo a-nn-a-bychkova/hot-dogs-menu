@@ -1,20 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { menuSelectors, menuOperations } from '../../redux';
+import { menuOperations } from '../../redux';
 import styles from './Modal.module.css';
 
 export default function Modal({ onToggleModal }) {
   const [name, setName] = useState('');
+  const [img, setImg] = useState('');
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
-  const [img, setImg] = useState('');
+
   const hotDogs = useSelector(state => state.menu.hotDogs);
   const dispatch = useDispatch();
   const elRef = useRef();
 
   useEffect(() => {
     function handleMouseUp(event) {
-      console.log(elRef.current);
       const isElementChild = elRef.current.contains(event.target);
       if (!isElementChild) {
         onToggleModal();
@@ -51,9 +51,9 @@ export default function Modal({ onToggleModal }) {
     });
     const isDuplicate = hotDogsNames.includes(name);
 
-    if ((name !== '', price != '', description != '', img !== '')) {
+    if ((name !== '', img !== '', price != '', description != '')) {
       if (!isDuplicate) {
-        dispatch(menuOperations.addHotDog({ name, price, description, img }));
+        dispatch(menuOperations.addHotDog({ name, img, price, description }));
         reset();
         onToggleModal();
       } else {

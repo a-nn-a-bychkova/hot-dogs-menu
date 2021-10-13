@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../components/Card';
 import { menuSelectors, menuOperations } from '../redux';
@@ -9,6 +9,7 @@ export default function AllHotDogsView() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(menuOperations.fetchHotDogs);
+    dispatch(menuOperations.updateHotDog);
   }, [dispatch]);
 
   return (

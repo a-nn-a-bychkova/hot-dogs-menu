@@ -1,21 +1,12 @@
 import { combineReducers } from 'redux';
+
 import { createReducer } from '@reduxjs/toolkit';
+import getHotDogs from './menu-selector';
 import {
-  addHotDog,
-  deleteHotDog,
-  fetchHotDogs,
-  addHotDogRequest,
   addHotDogSuccess,
-  addHotDogError,
-  deleteHotDogRequest,
   deleteHotDogSuccess,
-  deleteHotDogError,
-  fetchHotDogsRequest,
   fetchHotDogsSuccess,
-  fetchHotDogsError,
-  updateHotDogRequest,
   updateHotDogSuccess,
-  updateHotDogError,
 } from './menu-actions';
 
 const hotDogs = createReducer([], {
@@ -24,18 +15,14 @@ const hotDogs = createReducer([], {
     return [...state, payload];
   },
   [updateHotDogSuccess]: (state, { payload }) => {
-    return;
+    state.map(hotDog => {
+      if (hotDog.id === payload.id) {
+        hotDog = { ...payload };
+      }
+    });
   },
   [deleteHotDogSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
 });
-
-// const hotDogs = createReducer([], {
-//   [addHotDog]: (state, { payload }) => {
-//     return [...state, payload];
-//   },
-//   [deleteHotDog]: (state, { payload }) =>
-//     state.filter(({ id }) => id !== payload),
-// });
 
 export default combineReducers({ hotDogs });
