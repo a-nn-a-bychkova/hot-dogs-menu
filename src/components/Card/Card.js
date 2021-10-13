@@ -38,31 +38,36 @@ export default function Card({ id, price, name, description, img }) {
   }
   function handleUpdateBtnClick(id, event) {
     const hotDogsNames = hotDogs.map(function (hotdog) {
-      return hotdog.name;
+      if (hotdog.id !== id) {
+        return hotdog.name;
+      }
     });
-    const isDuplicate = hotDogsNames.includes(name);
-    // if (
-    //   (currName !== '', currPrice != '', currDescription != '', currImg !== '')
-    // ) {
-    //   if (!isDuplicate) {
-    dispatch(
-      menuOperations.updateHotDog({
-        id,
-        currName,
-        currImg,
-        currPrice,
-        currDescription,
-      }),
-    );
-    //   } else {
-    //     alert('This hotdog exists');
-    //   }
-    // } else {
-    //   alert('Fill the form please');
-    // }
-
-    setEditMode(false);
+    const isDuplicate = hotDogsNames.includes(currName);
+    if (
+      (currName !== '',
+      currImg !== '',
+      currPrice !== '',
+      currDescription !== '')
+    ) {
+      if (!isDuplicate) {
+        dispatch(
+          menuOperations.updateHotDog({
+            id,
+            currName,
+            currImg,
+            currPrice,
+            currDescription,
+          }),
+        );
+        setEditMode(false);
+      } else {
+        alert('This hot-dog exists');
+      }
+    } else {
+      alert('Fill the form please');
+    }
   }
+
   function handleDeleteBtnClick(id, event) {
     dispatch(menuOperations.deleteHotDog(id));
   }
@@ -89,7 +94,7 @@ export default function Card({ id, price, name, description, img }) {
           <form className={styles.Form}>
             <input
               className={styles.Input}
-              // type="image"
+              type="url"
               name="image"
               value={currImg}
               placeholder="Image"
@@ -110,7 +115,7 @@ export default function Card({ id, price, name, description, img }) {
               type="text"
               name="price"
               value={currPrice}
-              placeholder="Title"
+              placeholder="Price"
               onChange={handleChangePrice}
               required
             />

@@ -51,7 +51,7 @@ export default function Modal({ onToggleModal }) {
     });
     const isDuplicate = hotDogsNames.includes(name);
 
-    if ((name !== '', img !== '', price != '', description != '')) {
+    if ((name !== '', img !== '', price !== '', description !== '')) {
       if (!isDuplicate) {
         dispatch(menuOperations.addHotDog({ name, img, price, description }));
         reset();

@@ -5,7 +5,6 @@ export const addHotDog = createAction(
   'menu/addHotDogRequest',
   ({ img, price, name, description }) => ({
     payload: {
-      id: shortid.generate(),
       img,
       price,
       name,

@@ -15,11 +15,13 @@ const hotDogs = createReducer([], {
     return [...state, payload];
   },
   [updateHotDogSuccess]: (state, { payload }) => {
-    state.map(hotDog => {
+    const newState = state.map(hotDog => {
       if (hotDog.id === payload.id) {
-        hotDog = { ...payload };
+        return { ...hotDog, ...payload };
       }
+      return hotDog;
     });
+    return [...newState];
   },
   [deleteHotDogSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),

@@ -29,7 +29,7 @@ const addHotDog =
   ({ name, img, price, description }) =>
   dispatch => {
     const newHotDog = {
-      id: shortid.generate(),
+      // id: shortid.generate(),
       name,
       img,
       price,
@@ -39,7 +39,6 @@ const addHotDog =
     axios
       .post('/hotdog', newHotDog)
       .then(({ data }) => dispatch(addHotDogSuccess(data)))
-
       .catch(error => dispatch(addHotDogError(error.message)));
   };
 
@@ -64,7 +63,6 @@ const updateHotDog =
         description: currDescription,
       })
       .then(({ data }) => {
-        console.log('data', data);
         dispatch(updateHotDogSuccess(data));
       })
       .catch(error => dispatch(updateHotDogError(error.message)));
