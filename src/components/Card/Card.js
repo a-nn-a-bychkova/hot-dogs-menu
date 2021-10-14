@@ -37,12 +37,9 @@ export default function Card({ id, price, name, description, img }) {
     setCurrImg(e.currentTarget.value);
   }
   function handleUpdateBtnClick(id, event) {
-    const hotDogsNames = hotDogs.map(function (hotdog) {
-      if (hotdog.id !== id) {
-        return hotdog.name;
-      }
-    });
-    const isDuplicate = hotDogsNames.includes(currName);
+    const otherHotDogs = hotDogs.filter(hotdog => hotdog.id !== id);
+    const existingNames = otherHotDogs.map(hotdog => hotdog.name);
+    const isDuplicate = existingNames.includes(currName);
     if (
       (currName !== '',
       currImg !== '',
@@ -75,11 +72,12 @@ export default function Card({ id, price, name, description, img }) {
     <div>
       {!editMode && (
         <div className={styles.Card}>
-          <img src={currImg} className={styles.Image} />
-          <h2 className={styles.Name}>{name}</h2>
-          <p className={styles.Price}>{price}$</p>
-          <p className={styles.Description}>{description}</p>
-
+          <div>
+            <img src={currImg} className={styles.Image} alt={currName} />
+            <h2 className={styles.Name}>{name}</h2>
+            <p className={styles.Price}>{price}$</p>
+            <p className={styles.Description}>{description}</p>
+          </div>
           <button
             type="button"
             className={styles.EditBtn}
@@ -152,5 +150,3 @@ export default function Card({ id, price, name, description, img }) {
     </div>
   );
 }
-
-//img

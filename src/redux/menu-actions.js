@@ -1,18 +1,4 @@
-import shortid from 'shortid';
 import { createAction } from '@reduxjs/toolkit';
-
-export const addHotDog = createAction(
-  'menu/addHotDogRequest',
-  ({ img, price, name, description }) => ({
-    payload: {
-      img,
-      price,
-      name,
-      description,
-    },
-  }),
-);
-export const deleteHotDog = createAction('menu/deleteHotDogRequest');
 
 export const fetchHotDogsRequest = createAction('menu/fetchHotDogsRequest');
 export const fetchHotDogsSuccess = createAction('menu/fetchHotDogsSuccess');

@@ -1,8 +1,10 @@
 .Container {
-  max-width: 300px;
+  max-width: 280px;
+  margin-bottom: 30px;
 }
+
 .Image {
-  width: 300px;
+  width: 280px;
 }
 .Name {
   font-size: 18px;
@@ -27,6 +29,10 @@
   border: none;
   height: 30px;
 }
+.Form {
+  margin-bottom: 30px;
+}
+
 .BtnContainer {
   display: flex;
   flex-direction: column;
@@ -36,18 +42,11 @@
   height: 30px;
   margin-bottom: 10px;
 }
-/* .Table {
-  border-collapse: collapse;
-  border: 1px solid grey;
-  margin-bottom: 10px;
-}
-.Tr {
-  border-bottom: 1px solid grey;
-} */
+
 .Input {
-  width: 170px;
+  width: 280px;
 }
 .Textarea {
-  width: 170px;
-  max-height: 200px;
+  width: 280px;
+  height: 80px;
 }

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import shortid from 'shortid';
 import {
   addHotDogSuccess,
   addHotDogRequest,
@@ -29,7 +28,6 @@ const addHotDog =
   ({ name, img, price, description }) =>
   dispatch => {
     const newHotDog = {
-      // id: shortid.generate(),
       name,
       img,
       price,

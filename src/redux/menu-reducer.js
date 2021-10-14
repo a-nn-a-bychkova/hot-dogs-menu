@@ -1,7 +1,5 @@
 import { combineReducers } from 'redux';
-
 import { createReducer } from '@reduxjs/toolkit';
-import getHotDogs from './menu-selector';
 import {
   addHotDogSuccess,
   deleteHotDogSuccess,

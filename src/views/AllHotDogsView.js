@@ -9,11 +9,10 @@ export default function AllHotDogsView() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(menuOperations.fetchHotDogs);
-    dispatch(menuOperations.updateHotDog);
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.Container}>
       <h1>All hot-dogs</h1>
       <ul className={styles.List}>
         {hotDogs &&

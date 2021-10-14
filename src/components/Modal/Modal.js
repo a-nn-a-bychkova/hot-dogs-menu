@@ -24,7 +24,7 @@ export default function Modal({ onToggleModal }) {
     return () => {
       window.removeEventListener('mouseup', handleMouseUp);
     };
-  }, []);
+  }, [onToggleModal]);
 
   function handleChangeName(e) {
     e.preventDefault();
@@ -109,7 +109,7 @@ export default function Modal({ onToggleModal }) {
           />
           <input
             className={styles.Input}
-            // type="image"
+            type="url"
             name="image"
             value={img}
             placeholder="Image"
@@ -137,6 +137,5 @@ export default function Modal({ onToggleModal }) {
     </div>
   );
 }
-//!!! label для input
-//!!! img
+
 //when   e.preventDefault() is needed
