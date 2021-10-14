@@ -137,5 +137,3 @@ export default function Modal({ onToggleModal }) {
     </div>
   );
 }
-
-//when   e.preventDefault() is needed
