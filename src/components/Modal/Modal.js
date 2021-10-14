@@ -26,21 +26,24 @@ export default function Modal({ onToggleModal }) {
     };
   }, [onToggleModal]);
 
-  function handleChangeName(e) {
+  function handleChangeInput(e) {
     e.preventDefault();
-    setName(e.currentTarget.value);
-  }
-  function handleChangePrice(e) {
-    e.preventDefault();
-    setPrice(e.currentTarget.value);
-  }
-  function handleChangeDescription(e) {
-    e.preventDefault();
-    setDescription(e.currentTarget.value);
-  }
-  function handleChangeImg(e) {
-    e.preventDefault();
-    setImg(e.currentTarget.value);
+    switch (e.currentTarget.name) {
+      case 'name':
+        setName(e.currentTarget.value);
+        break;
+      case 'price':
+        setPrice(e.currentTarget.value);
+        break;
+      case 'description':
+        setDescription(e.currentTarget.value);
+        break;
+      case 'image':
+        setImg(e.currentTarget.value);
+        break;
+      default:
+        alert('input does not exist');
+    }
   }
 
   function handleAddBtnClick(e) {
@@ -86,7 +89,7 @@ export default function Modal({ onToggleModal }) {
             name="name"
             value={name}
             placeholder="Name"
-            onChange={handleChangeName}
+            onChange={handleChangeInput}
             required
           />
           <input
@@ -95,7 +98,7 @@ export default function Modal({ onToggleModal }) {
             name="price"
             value={price}
             placeholder="Price"
-            onChange={handleChangePrice}
+            onChange={handleChangeInput}
             required
           />
           <textarea
@@ -104,7 +107,7 @@ export default function Modal({ onToggleModal }) {
             name="description"
             value={description}
             placeholder="Description"
-            onChange={handleChangeDescription}
+            onChange={handleChangeInput}
             required
           />
           <input
@@ -113,7 +116,7 @@ export default function Modal({ onToggleModal }) {
             name="image"
             value={img}
             placeholder="Image"
-            onChange={handleChangeImg}
+            onChange={handleChangeInput}
             required
           />
         </form>

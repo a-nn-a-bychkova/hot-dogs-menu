@@ -20,22 +20,27 @@ export default function Card({ id, price, name, description, img }) {
     event.preventDefault();
     setEditMode(true);
   }
-  function handleChangeName(e) {
+
+  function handleChangeInput(e) {
     e.preventDefault();
-    setCurrName(e.currentTarget.value);
+    switch (e.currentTarget.name) {
+      case 'name':
+        setCurrName(e.currentTarget.value);
+        break;
+      case 'price':
+        setCurrPrice(e.currentTarget.value);
+        break;
+      case 'description':
+        setCurrDescription(e.currentTarget.value);
+        break;
+      case 'image':
+        setCurrImg(e.currentTarget.value);
+        break;
+      default:
+        alert('undefiened input');
+    }
   }
-  function handleChangePrice(e) {
-    e.preventDefault();
-    setCurrPrice(e.currentTarget.value);
-  }
-  function handleChangeDescription(e) {
-    e.preventDefault();
-    setCurrDescription(e.currentTarget.value);
-  }
-  function handleChangeImg(e) {
-    e.preventDefault();
-    setCurrImg(e.currentTarget.value);
-  }
+
   function handleUpdateBtnClick(id, event) {
     const otherHotDogs = hotDogs.filter(hotdog => hotdog.id !== id);
     const existingNames = otherHotDogs.map(hotdog => hotdog.name);
@@ -96,7 +101,7 @@ export default function Card({ id, price, name, description, img }) {
               name="image"
               value={currImg}
               placeholder="Image"
-              onChange={handleChangeImg}
+              onChange={handleChangeInput}
               required
             />
             <input
@@ -105,7 +110,7 @@ export default function Card({ id, price, name, description, img }) {
               name="name"
               value={currName}
               placeholder="Name"
-              onChange={handleChangeName}
+              onChange={handleChangeInput}
               required
             />
             <input
@@ -114,7 +119,7 @@ export default function Card({ id, price, name, description, img }) {
               name="price"
               value={currPrice}
               placeholder="Price"
-              onChange={handleChangePrice}
+              onChange={handleChangeInput}
               required
             />
             <textarea
@@ -123,7 +128,7 @@ export default function Card({ id, price, name, description, img }) {
               name="description"
               value={currDescription}
               placeholder="Description"
-              onChange={handleChangeDescription}
+              onChange={handleChangeInput}
               required
             />
           </form>

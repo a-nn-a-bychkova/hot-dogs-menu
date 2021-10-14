@@ -5,6 +5,7 @@
 
 .Image {
   width: 280px;
+  max-height: 200px;
 }
 .Name {
   font-size: 18px;
