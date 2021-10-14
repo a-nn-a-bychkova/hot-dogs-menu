@@ -1,3 +1,0 @@
-//!!! img
-
-//!!! label для input
