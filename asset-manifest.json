@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hot-dogs-menu/static/css/main.b8dbb1db.chunk.css",
+    "main.css": "/hot-dogs-menu/static/css/main.9a51b97a.chunk.css",
     "main.js": "/hot-dogs-menu/static/js/main.20808a66.chunk.js",
     "main.js.map": "/hot-dogs-menu/static/js/main.20808a66.chunk.js.map",
     "runtime-main.js": "/hot-dogs-menu/static/js/runtime-main.30f144b3.js",
@@ -10,14 +10,14 @@
     "static/js/3.bbb049e1.chunk.js": "/hot-dogs-menu/static/js/3.bbb049e1.chunk.js",
     "static/js/3.bbb049e1.chunk.js.map": "/hot-dogs-menu/static/js/3.bbb049e1.chunk.js.map",
     "index.html": "/hot-dogs-menu/index.html",
-    "static/css/main.b8dbb1db.chunk.css.map": "/hot-dogs-menu/static/css/main.b8dbb1db.chunk.css.map",
+    "static/css/main.9a51b97a.chunk.css.map": "/hot-dogs-menu/static/css/main.9a51b97a.chunk.css.map",
     "static/js/2.4fb29ca3.chunk.js.LICENSE.txt": "/hot-dogs-menu/static/js/2.4fb29ca3.chunk.js.LICENSE.txt",
     "static/media/logo.43ea7e6b.JPG": "/hot-dogs-menu/static/media/logo.43ea7e6b.JPG"
   },
   "entrypoints": [
     "static/js/runtime-main.30f144b3.js",
     "static/js/2.4fb29ca3.chunk.js",
-    "static/css/main.b8dbb1db.chunk.css",
+    "static/css/main.9a51b97a.chunk.css",
     "static/js/main.20808a66.chunk.js"
   ]
 }
